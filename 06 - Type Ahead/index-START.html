@@ -44,6 +44,7 @@ function displayMatches() {
   const matchArray = findMatches(this.value, cities);
   // console.log(matchArray);
   const html = matchArray.map(place => {
+    // Create regex to make query global and case insensitive
     const regex = new RegExp(this.value, 'gi');
     const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
     const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`)
@@ -58,7 +59,9 @@ function displayMatches() {
   suggestions.innerHTML = html;
 }
 
+// Select search input
 const searchInput = document.querySelector('.search');
+// Select list of items with cities suggestions
 const suggestions = document.querySelector('.suggestions');
 
 // Change event occurs when you click out of something
