@@ -106,6 +106,8 @@
     // check if shift key down
     // Check that they are checking it, not unchecking
     if (e.shiftKey && this.checked) {
+      // iterate over all the checkboxes
+      // check the one between corner cases - this and lastChecked
       checkboxes.forEach(checkbox => {
         if (checkbox === this || checkbox === lastChecked) {
           inBetween = !inBetween;
