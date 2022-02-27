@@ -13,7 +13,6 @@ function togglePlay() {
   // method 1
   const method = video.paused ? 'play' : 'pause';
   video[method]();
-
   // // method 2
   // if (video.paused) {
   //   video.play();
@@ -28,6 +27,12 @@ function updateButton() {
   toggle.textContent = icon;
 }
 
+// skip buttons
+function skip() {
+  // console.log(this.dataset);
+  video.currentTime += parseFloat(this.dataset.skip);
+}
+
 // Hook up the event listeners
 video.addEventListener('click', togglePlay);
 // update play symbol to pause/play
@@ -35,5 +40,7 @@ video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 
 toggle.addEventListener('click', togglePlay);
+
+skipButtons.forEach(button => button.addEventListener('click', skip));
 
 
