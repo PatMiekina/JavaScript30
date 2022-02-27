@@ -1,4 +1,4 @@
-// Get our elements
+//// 1. Get our elements
 const player = document.querySelector('.player');
 const video = player.querySelector('.viewer');
 
@@ -8,7 +8,7 @@ const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
 
-// Build our functions
+//// 2. Build our functions
 function togglePlay() {
   // method 1
   const method = video.paused ? 'play' : 'pause';
@@ -32,8 +32,12 @@ function skip() {
   // console.log(this.dataset);
   video.currentTime += parseFloat(this.dataset.skip);
 }
+//
+function handleRangeUpdate () {
+  video[this.name] = this.value;
+}
 
-// Hook up the event listeners
+//// 3. Hook up the event listeners
 video.addEventListener('click', togglePlay);
 // update play symbol to pause/play
 video.addEventListener('play', updateButton);
@@ -43,4 +47,5 @@ toggle.addEventListener('click', togglePlay);
 
 skipButtons.forEach(button => button.addEventListener('click', skip));
 
-
+ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
+ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
