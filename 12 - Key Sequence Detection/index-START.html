@@ -8,8 +8,18 @@
 <body>
   <!-- Buzzfeed up up down down left right left right B A -->
 <script>
+  const pressed = [];
+  const secretCode = 'flamingo';
   window.addEventListener('keyup', e => {
-    console.log(e.key);
+    // console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    // console.log(pressed);
+    if (pressed.join('').includes(secretCode)) {
+      console.log('DING DING!');
+      // ADDS UNICORNS AND RAINBOWS!
+      cornify_add();
+    }
   })
 </script>
 </body>
