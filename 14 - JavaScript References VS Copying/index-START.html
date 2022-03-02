@@ -8,6 +8,24 @@
 
   <script>
     // start with strings, numbers and booleans
+    // ONLY ASSIGNS VALUE, NOT MEMORY ALLOCATION
+
+    // Numbers
+    let age = 100;
+    let age2 = age;
+    console.log(age, age2);
+
+    age = 200;
+    console.log(age, age2);
+
+    // Strings
+
+    let name = 'Bruno';
+    let name2 = name;
+    console.log(name, name2);
+
+    name = "We don't talk about Bruno";
+    console.log(name, name2);
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
