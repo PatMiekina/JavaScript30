@@ -30,6 +30,24 @@
   const itemsList = document.querySelector('.plates');
   const items = [];
 
+  function addItem(e) {
+    // prevent refresh
+    e.preventDefault();
+    const text = (this.querySelector('[name=item]')).value;
+    const item = {
+      // ES6
+      text,
+      // Non ES6
+      // text: text,
+      done: false
+    }
+    items.push(item);
+    // Clear the form
+    this.reset();
+  }
+
+  addItems.addEventListener('submit', addItem);
+
 </script>
 
 
