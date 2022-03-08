@@ -23,6 +23,9 @@
       <input type="text" name="item" placeholder="Item Name" required>
       <input type="submit" value="+ Add Item">
     </form>
+    <button class="btn-clear">Clear All</button>
+    <button class="btn-check-all">Check All</button>
+    <button class="btn-check-none">Check None</button>
   </div>
 
 <script>
@@ -76,6 +79,38 @@
   addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleDone);
   populateList(items, itemsList);
+
+  // // Challenge 1: button - clear all
+  // function clearAll(items) {
+  //   items = [];
+  //   localStorage.setItem('items', JSON.stringify(items));
+  //   populateList(items, itemsList);
+  // }
+
+  // const btnClear = document.querySelector('.btn-clear');
+  // btnClear.addEventListener('click', clearAll(items));
+  // // Challenge 2: button - check all
+  // function checkNone(items) {
+  //   items.forEach (item => {
+  //     item.done = false;
+  //   })
+  //   localStorage.setItem('items', JSON.stringify(items));
+  //   populateList(items, itemsList);
+  // }
+
+  // const btnCheckNone = document.querySelector('.btn-check-none');
+  // btnCheckNone.addEventListener('click', checkNone(items));
+  // // Challenge 3: button - check none
+  // function checkAll(items) {
+  //   items.forEach (item => {
+  //     item.done = true;
+  //   })
+  //   localStorage.setItem('items', JSON.stringify(items));
+  //   populateList(items, itemsList);
+  // }
+
+  // const btnCheckAll = document.querySelector('.btn-check-all');
+  // btnCheckAll.addEventListener('click', checkAll(items));
 
 </script>
 
