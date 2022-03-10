@@ -182,6 +182,24 @@
     </li>
   </ul>
 <script>
+  const videos = document.querySelectorAll('li');
+  let time = 0;
+  videos.forEach(video => {
+    // console.log(video.dataset.time);
+    let minutes = video.dataset.time.split(":")[0];
+    let seconds = video.dataset.time.split(":")[1];
+    // console.log(minutes);
+    // console.log(seconds);
+
+    time += seconds + minutes * 60;
+  });
+  let fMinutes = time % 60;
+  console.log(fMinutes);
+  let fSeconds = time - fMinutes * 60;
+    console.log(fSeconds);
+
+  const finalTime = `${fMinutes}:${fSeconds}`;
+  console.log(finalTime);
 </script>
 </body>
 </html>
