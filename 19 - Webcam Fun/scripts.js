@@ -5,3 +5,4 @@ const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 
 // initial commit
+// commit 2
