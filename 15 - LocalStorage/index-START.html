@@ -77,10 +77,15 @@
   function toggleDone(e) {
     // returns two elements - only make it return the checkbox
     if(!e.target.matches('input')) return;
+    // Assign el as the target of the click event
     const el = e.target;
+    // Assign index with the dataset-index of the target of the click event
     const index = el.dataset.index;
+    // Change 'done' value to opposite
     items[index].done = !items[index].done;
+    // Update the item in local storage
     localStorage.setItem('items', JSON.stringify(items));
+    // Re-populate the list
     populateList(items, itemsList);
   }
 
