@@ -29,8 +29,11 @@
   </div>
 
 <script>
+  // Form for adding tapas
   const addItems = document.querySelector('.add-items');
+  // List of tapas
   const itemsList = document.querySelector('.plates');
+  // Empty array or parsed elements from local storage
   const items = JSON.parse(localStorage.getItem('items')) || [];
 
   // Get item from the form
@@ -38,6 +41,7 @@
     // prevent refresh
     e.preventDefault();
     const text = (this.querySelector('[name=item]')).value;
+    // Set item (tapas) to take name from the form & not be done
     const item = {
       // ES6
       text,
@@ -45,7 +49,9 @@
       // text: text,
       done: false
     }
+    // Add item to the array
     items.push(item);
+    // Populate the list with the items from the array
     populateList(items, itemsList);
     // Save the stringified items into local storage
     localStorage.setItem('items', JSON.stringify(items));
